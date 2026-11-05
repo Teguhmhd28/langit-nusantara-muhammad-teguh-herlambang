@@ -1,0 +1,971 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Langit Nusantara | Wisata Alam Indonesia</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --biru: #087bd8;
+  --biru-tua: #063b78;
+  --biru-muda: #dff3ff;
+  --putih: #ffffff;
+  --kuning: #ffd447;
+  --teks: #12365d;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f2faff;
+  color: var(--teks);
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(5, 91, 170, .96);
+  backdrop-filter: blur(12px);
+  padding: 15px 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  box-shadow: 0 5px 20px #063b7830;
+}
+
+.logo {
+  color: white;
+  font-size: 21px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.logo span {
+  color: var(--kuning);
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 10px 13px;
+  border-radius: 30px;
+  transition: .3s;
+}
+
+nav a:hover {
+  background: white;
+  color: var(--biru);
+}
+
+.hero {
+  min-height: 550px;
+  background:
+    linear-gradient(90deg, rgba(0,35,75,.78), rgba(0,40,80,.08)),
+    url('https://images.unsplash.com/photo-1516690561799-46d8f74f9abf?auto=format&fit=crop&w=1800&q=85')
+    center/cover;
+  display: flex;
+  align-items: center;
+  padding: 70px 9%;
+  color: white;
+}
+
+.hero-content {
+  max-width: 700px;
+}
+
+.hero small {
+  display: inline-block;
+  background: #ffffff30;
+  padding: 10px 18px;
+  border-radius: 30px;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.hero h1 {
+  font-size: clamp(40px, 7vw, 75px);
+  line-height: 1.1;
+  margin: 25px 0;
+  font-weight: 900;
+}
+
+.hero h1 span {
+  color: var(--kuning);
+}
+
+.hero p {
+  font-size: 16px;
+  line-height: 1.8;
+  max-width: 550px;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 25px;
+  background: var(--kuning);
+  color: var(--biru-tua);
+  padding: 14px 25px;
+  border-radius: 35px;
+  text-decoration: none;
+  font-weight: 800;
+  transition: .3s;
+}
+
+.btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px #0003;
+}
+
+section {
+  padding: 75px 7%;
+}
+
+.judul {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.judul small {
+  color: var(--biru);
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.judul h2 {
+  font-size: clamp(25px, 4vw, 38px);
+  color: var(--biru-tua);
+  margin: 10px 0;
+}
+
+.judul p {
+  color: #647e98;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.tentang {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+  align-items: center;
+}
+
+.kotak {
+  background: white;
+  border-radius: 25px;
+  padding: 30px;
+  box-shadow: 0 12px 35px #087bd815;
+}
+
+.kotak h3 {
+  color: var(--biru);
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.kotak p {
+  font-size: 14px;
+  line-height: 1.9;
+  color: #526e89;
+  margin-bottom: 12px;
+}
+
+.gambar-tentang {
+  width: 100%;
+  height: 330px;
+  object-fit: cover;
+  border-radius: 25px;
+  box-shadow: 0 12px 35px #087bd830;
+}
+
+.destinasi {
+  background: linear-gradient(180deg, #e5f5ff, #f7fcff);
+}
+
+.kartu-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.kartu {
+  background: white;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px #087bd81c;
+  transition: .35s;
+}
+
+.kartu:hover {
+  transform: translateY(-9px);
+  box-shadow: 0 18px 35px #087bd830;
+}
+
+.kartu img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+}
+
+.kartu-isi {
+  padding: 22px;
+}
+
+.kartu h3 {
+  color: var(--biru-tua);
+  font-size: 21px;
+  margin-bottom: 5px;
+}
+
+.lokasi {
+  color: var(--biru);
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.kartu p {
+  font-size: 13px;
+  line-height: 1.8;
+  color: #627b95;
+}
+
+.kartu a {
+  display: inline-block;
+  margin-top: 15px;
+  color: var(--biru);
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 13px;
+}
+
+.detail {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: center;
+}
+
+.detail img {
+  width: 100%;
+  height: 370px;
+  object-fit: cover;
+  border-radius: 25px;
+}
+
+.detail h3 {
+  color: var(--biru);
+  font-size: 27px;
+  margin-bottom: 15px;
+}
+
+.detail p {
+  color: #526e89;
+  font-size: 14px;
+  line-height: 1.9;
+  margin-bottom: 13px;
+}
+
+.peta {
+  background: var(--biru-muda);
+}
+
+.peta-container {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: 25px;
+  align-items: stretch;
+}
+
+.peta-info {
+  background: white;
+  padding: 30px;
+  border-radius: 23px;
+  box-shadow: 0 10px 30px #087bd81c;
+}
+
+.peta-info h3 {
+  color: var(--biru);
+  margin-bottom: 15px;
+}
+
+.peta-info p {
+  font-size: 14px;
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+
+iframe {
+  width: 100%;
+  min-height: 350px;
+  border: 0;
+  border-radius: 23px;
+}
+
+.tips {
+  background: linear-gradient(135deg, #087bd8, #063b78);
+  color: white;
+}
+
+.tips .judul h2,
+.tips .judul p {
+  color: white;
+}
+
+.tips-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.tip {
+  background: #ffffff19;
+  border: 1px solid #ffffff40;
+  border-radius: 20px;
+  padding: 25px;
+}
+
+.tip h3 {
+  margin: 12px 0;
+}
+
+.tip p {
+  font-size: 13px;
+  line-height: 1.8;
+  color: #e4f5ff;
+}
+
+.ikon {
+  font-size: 35px;
+}
+
+.galeri {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.galeri img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 18px;
+  transition: .3s;
+}
+
+.galeri img:hover {
+  transform: scale(1.04);
+}
+
+.identitas {
+  background: #e3f4ff;
+}
+
+.identitas-box {
+  background: white;
+  padding: 35px;
+  border-radius: 25px;
+  text-align: center;
+  max-width: 700px;
+  margin: auto;
+  box-shadow: 0 10px 30px #087bd81c;
+}
+
+.identitas-box h2 {
+  color: var(--biru-tua);
+  margin-bottom: 20px;
+}
+
+.identitas-box p {
+  line-height: 2;
+  font-size: 14px;
+}
+
+footer {
+  background: #052f62;
+  color: white;
+  padding: 35px 7%;
+  text-align: center;
+}
+
+footer h3 {
+  color: var(--kuning);
+  margin-bottom: 10px;
+}
+
+footer p {
+  font-size: 12px;
+  line-height: 2;
+}
+
+#atas {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  border: none;
+  background: var(--kuning);
+  color: var(--biru-tua);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  font-size: 23px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 5px 15px #0002;
+}
+
+/* TAMPILAN HP DAN TABLET */
+
+@media(max-width:850px) {
+  header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .tentang,
+  .detail,
+  .peta-container {
+    grid-template-columns: 1fr;
+  }
+
+  .kartu-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tips-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media(max-width:550px) {
+  nav {
+    justify-content: center;
+  }
+
+  nav a {
+    font-size: 10px;
+    padding: 8px;
+  }
+
+  .hero {
+    min-height: 450px;
+  }
+
+  .kartu-container,
+  .tips-container {
+    grid-template-columns: 1fr;
+  }
+
+  .galeri {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  section {
+    padding: 50px 5%;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGASI -->
+<header>
+  <div class="logo">✦ LANGIT <span>NUSANTARA</span></div>
+
+  <nav>
+    <a href="#beranda">Beranda</a>
+    <a href="#tentang">Tentang</a>
+    <a href="#destinasi">Destinasi</a>
+    <a href="#bromo">Cerita Wisata</a>
+    <a href="#peta">Peta Wisata</a>
+    <a href="#tips">Tips</a>
+    <a href="#galeri">Galeri</a>
+    <a href="#identitas">Identitas</a>
+  </nav>
+</header>
+
+<!-- HALAMAN 1: BERANDA -->
+<div class="hero" id="beranda">
+  <div class="hero-content">
+    <small>☀ PESONA ALAM INDONESIA</small>
+
+    <h1>
+      Jelajahi <span>Keindahan</span><br>
+      Alam Nusantara.
+    </h1>
+
+    <p>
+      Dari puncak gunung hingga birunya lautan,
+      Indonesia menyimpan begitu banyak keajaiban alam.
+      Yuk, kenali destinasi indah dan cerita di baliknya!
+    </p>
+
+    <a href="#destinasi" class="btn">
+      Mulai Penjelajahan →
+    </a>
+  </div>
+</div>
+
+<!-- HALAMAN 2: TENTANG -->
+<section id="tentang">
+  <div class="judul">
+    <small>KENALI NEGERI KITA</small>
+    <h2>Indonesia, Rumah Keajaiban Alam</h2>
+    <p>Mengenal kekayaan alam yang dimiliki Indonesia.</p>
+  </div>
+
+  <div class="tentang">
+    <div class="kotak">
+      <h3>Alam yang Menyimpan Cerita</h3>
+
+      <p>
+        Indonesia merupakan negara kepulauan yang memiliki
+        kekayaan alam luar biasa. Mulai dari pegunungan,
+        pantai, danau, hutan tropis, hingga keindahan bawah laut.
+      </p>
+
+      <p>
+        Letak Indonesia di kawasan tropis serta pertemuan
+        beberapa lempeng tektonik membentuk berbagai
+        bentang alam yang unik dan menarik untuk dipelajari.
+      </p>
+
+      <p>
+        Wisata alam bukan hanya tentang menikmati pemandangan,
+        tetapi juga mengenal sejarah bumi, budaya masyarakat,
+        serta pentingnya menjaga lingkungan.
+      </p>
+    </div>
+
+    <img class="gambar-tentang"
+      src="https://images.unsplash.com/photo-1530789253388-582c481c54b0?auto=format&fit=crop&w=1000&q=85"
+      alt="Pemandangan alam Indonesia">
+  </div>
+</section>
+
+<!-- HALAMAN 3: DESTINASI -->
+<section class="destinasi" id="destinasi">
+  <div class="judul">
+    <small>TEMUKAN TEMPAT FAVORITMU</small>
+    <h2>Destinasi Wisata Pilihan</h2>
+    <p>Beberapa keindahan alam terbaik yang wajib kamu kenali.</p>
+  </div>
+
+  <div class="kartu-container">
+
+    <div class="kartu">
+      <img src="https://images.unsplash.com/photo-1516690561799-46d8f74f9abf?auto=format&fit=crop&w=800&q=85" alt="Gunung Bromo">
+
+      <div class="kartu-isi">
+        <h3>Gunung Bromo</h3>
+        <div class="lokasi">📍 Jawa Timur</div>
+        <p>
+          Gunung Bromo merupakan gunung api aktif
+          yang terkenal dengan pemandangan matahari
+          terbit, kawah, dan lautan pasir yang luas.
+        </p>
+        <a href="#bromo">Pelajari Selengkapnya →</a>
+      </div>
+    </div>
+
+    <div class="kartu">
+      <img src="https://images.unsplash.com/photo-1516690561799-46d8f74f9abf?auto=format&fit=crop&w=800&q=85" alt="Raja Ampat">
+
+      <div class="kartu-isi">
+        <h3>Raja Ampat</h3>
+        <div class="lokasi">📍 Papua Barat Daya</div>
+        <p>
+          Raja Ampat terkenal dengan gugusan pulau karst,
+          air laut jernih, terumbu karang, dan kekayaan
+          biota laut yang luar biasa.
+        </p>
+        <a href="#raja">Pelajari Selengkapnya →</a>
+      </div>
+    </div>
+
+    <div class="kartu">
+      <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=800&q=85" alt="Danau Toba">
+
+      <div class="kartu-isi">
+        <h3>Danau Toba</h3>
+        <div class="lokasi">📍 Sumatera Utara</div>
+        <p>
+          Danau vulkanik terbesar di Indonesia ini
+          memiliki panorama perbukitan dan Pulau
+          Samosir yang kaya akan budaya Batak.
+        </p>
+        <a href="#toba">Pelajari Selengkapnya →</a>
+      </div>
+    </div>
+
+    <div class="kartu">
+      <img src="https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=800&q=85" alt="Air Terjun">
+
+      <div class="kartu-isi">
+        <h3>Tumpak Sewu</h3>
+        <div class="lokasi">📍 Lumajang, Jawa Timur</div>
+        <p>
+          Air terjun yang memiliki banyak aliran air
+          menyerupai tirai raksasa di tengah
+          pemandangan alam yang hijau.
+        </p>
+        <a href="#peta">Lihat Lokasi →</a>
+      </div>
+    </div>
+
+    <div class="kartu">
+      <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=800&q=85" alt="Labuan Bajo">
+
+      <div class="kartu-isi">
+        <h3>Labuan Bajo</h3>
+        <div class="lokasi">📍 Nusa Tenggara Timur</div>
+        <p>
+          Labuan Bajo merupakan pintu gerbang menuju
+          Taman Nasional Komodo dengan panorama
+          pulau-pulau dan lautan yang indah.
+        </p>
+        <a href="#peta">Lihat Lokasi →</a>
+      </div>
+    </div>
+
+    <div class="kartu">
+      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=85" alt="Wisata alam">
+
+      <div class="kartu-isi">
+        <h3>Danau Beratan</h3>
+        <div class="lokasi">📍 Bali</div>
+        <p>
+          Danau di kawasan Bedugul ini terkenal
+          dengan udara sejuk, panorama perbukitan,
+          dan Pura Ulun Danu Beratan.
+        </p>
+        <a href="#peta">Lihat Lokasi →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- HALAMAN 4: CERITA WISATA BROMO -->
+<section id="bromo">
+  <div class="judul">
+    <small>SEJARAH DAN KEUNIKAN</small>
+    <h2>Mengenal Gunung Bromo</h2>
+  </div>
+
+  <div class="detail">
+    <img src="https://images.unsplash.com/photo-1516690561799-46d8f74f9abf?auto=format&fit=crop&w=1000&q=85" alt="Gunung Bromo">
+
+    <div>
+      <h3>Keajaiban Vulkanik Jawa Timur</h3>
+
+      <p>
+        Gunung Bromo merupakan salah satu gunung api
+        aktif yang berada di kawasan Taman Nasional
+        Bromo Tengger Semeru, Jawa Timur.
+      </p>
+
+      <p>
+        Nama Bromo sering dikaitkan dengan Brahma,
+        salah satu dewa dalam tradisi Hindu.
+        Kawasan ini juga memiliki hubungan erat
+        dengan masyarakat Suku Tengger.
+      </p>
+
+      <p>
+        Salah satu tradisi yang terkenal adalah
+        Upacara Yadnya Kasada, yaitu tradisi masyarakat
+        Tengger yang dilaksanakan di kawasan Bromo.
+      </p>
+
+      <p>
+        Daya tarik utamanya meliputi kawah gunung,
+        lautan pasir, pemandangan matahari terbit,
+        serta kebudayaan masyarakat setempat.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- HALAMAN 5: RAJA AMPAT -->
+<section id="raja" class="destinasi">
+  <div class="judul">
+    <small>SURGA BAHARI INDONESIA</small>
+    <h2>Keindahan Raja Ampat</h2>
+  </div>
+
+  <div class="detail">
+    <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1000&q=85" alt="Keindahan laut">
+
+    <div>
+      <h3>Surga Bawah Laut</h3>
+
+      <p>
+        Raja Ampat terletak di Provinsi Papua Barat Daya.
+        Kawasan ini terkenal karena memiliki kekayaan
+        ekosistem laut yang sangat beragam.
+      </p>
+
+      <p>
+        Gugusan pulau karst, air laut yang jernih,
+        terumbu karang, dan berbagai jenis ikan
+        menjadi daya tarik utama wisatawan.
+      </p>
+
+      <p>
+        Raja Ampat menjadi salah satu destinasi
+        wisata bahari yang dikenal hingga
+        mancanegara.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- HALAMAN 6: DANAU TOBA -->
+<section id="toba">
+  <div class="judul">
+    <small>JEJAK SEJARAH BUMI</small>
+    <h2>Pesona Danau Toba</h2>
+  </div>
+
+  <div class="detail">
+    <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1000&q=85" alt="Danau dan pegunungan">
+
+    <div>
+      <h3>Danau Vulkanik yang Mendunia</h3>
+
+      <p>
+        Danau Toba terbentuk akibat letusan gunung
+        api purba berskala sangat besar puluhan
+        ribu tahun yang lalu.
+      </p>
+
+      <p>
+        Di bagian tengah danau terdapat Pulau
+        Samosir yang menjadi salah satu pusat
+        kebudayaan masyarakat Batak Toba.
+      </p>
+
+      <p>
+        Wisatawan dapat menikmati panorama alam,
+        mengenal rumah adat, kain ulos, musik
+        tradisional, dan kuliner khas Batak.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- HALAMAN 7: PETA WISATA -->
+<section class="peta" id="peta">
+  <div class="judul">
+    <small>TEMUKAN LOKASINYA</small>
+    <h2>Peta Wisata Indonesia</h2>
+    <p>Temukan lokasi Gunung Bromo melalui Google Maps.</p>
+  </div>
+
+  <div class="peta-container">
+    <div class="peta-info">
+      <h3>📍 Gunung Bromo</h3>
+
+      <p><b>Provinsi:</b> Jawa Timur</p>
+      <p><b>Kawasan:</b> Taman Nasional Bromo Tengger Semeru</p>
+      <p><b>Daya tarik:</b> Kawah, lautan pasir, dan matahari terbit.</p>
+
+      <a class="btn"
+        href="https://www.google.com/maps/search/?api=1&query=Gunung+Bromo"
+        target="_blank">
+        Buka Google Maps →
+      </a>
+
+      <p style="margin-top:20px">
+        Lokasi lainnya:
+        <br>
+        <a href="https://www.google.com/maps/search/Raja+Ampat"
+        target="_blank">Raja Ampat</a>
+        <br>
+        <a href="https://www.google.com/maps/search/Danau+Toba"
+        target="_blank">Danau Toba</a>
+        <br>
+        <a href="https://www.google.com/maps/search/Labuan+Bajo"
+        target="_blank">Labuan Bajo</a>
+      </p>
+    </div>
+
+    <iframe
+      src="https://www.google.com/maps?q=Gunung+Bromo+Jawa+Timur&output=embed"
+      loading="lazy"
+      allowfullscreen>
+    </iframe>
+  </div>
+</section>
+
+<!-- HALAMAN 8: TIPS WISATA -->
+<section class="tips" id="tips">
+  <div class="judul">
+    <small style="color:#ffe16d">WISATA BERTANGGUNG JAWAB</small>
+    <h2>Jelajah Alam, Tetap Jaga Alam</h2>
+    <p>Keindahan alam adalah tanggung jawab kita bersama.</p>
+  </div>
+
+  <div class="tips-container">
+    <div class="tip">
+      <div class="ikon">♻️</div>
+      <h3>Jangan Buang Sampah</h3>
+      <p>
+        Selalu bawa kembali sampah setelah berwisata
+        dan kurangi penggunaan plastik sekali pakai.
+      </p>
+    </div>
+
+    <div class="tip">
+      <div class="ikon">🌿</div>
+      <h3>Jaga Kelestarian Alam</h3>
+      <p>
+        Jangan merusak tanaman, mengambil biota laut,
+        atau mengganggu kehidupan satwa liar.
+      </p>
+    </div>
+
+    <div class="tip">
+      <div class="ikon">🤝</div>
+      <h3>Hormati Budaya Lokal</h3>
+      <p>
+        Patuhi aturan masyarakat setempat dan
+        hormati adat istiadat di setiap destinasi.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- HALAMAN 9: GALERI -->
+<section id="galeri">
+  <div class="judul">
+    <small>GALERI NUSANTARA</small>
+    <h2>Potret Keindahan Indonesia</h2>
+    <p>Berbagai panorama yang membuat Indonesia istimewa.</p>
+  </div>
+
+  <div class="galeri">
+    <img src="https://images.unsplash.com/photo-1516690561799-46d8f74f9abf?auto=format&fit=crop&w=700&q=85" alt="Gunung">
+    <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=700&q=85" alt="Laut">
+    <img src="https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=700&q=85" alt="Air terjun">
+    <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=700&q=85" alt="Danau">
+    <img src="https://images.unsplash.com/photo-1530789253388-582c481c54b0?auto=format&fit=crop&w=700&q=85" alt="Pemandangan">
+    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=700&q=85" alt="Alam">
+    <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=700&q=85" alt="Pantai">
+    <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=700&q=85" alt="Pegunungan">
+  </div>
+</section>
+
+<!-- HALAMAN 10: IDENTITAS -->
+<section class="identitas" id="identitas">
+  <div class="identitas-box">
+    <h2>Terima Kasih Telah Menjelajah!</h2>
+
+    <p>
+      Website ini dibuat sebagai media informasi
+      dan pengenalan wisata alam Indonesia.
+      Mari mengenal, menikmati, dan menjaga
+      kekayaan alam Nusantara.
+    </p>
+
+    <br>
+
+    <p><b>Nama:</b> Muhammad Teguh Herlambang</p>
+    <p><b>Program Studi:</b> Pendidikan Matematika</p>
+    <p><b>Universitas:</b> Universitas Pasundan</p>
+    <p><b>Mata Kuliah:</b> TIK</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <h3>✦ LANGIT NUSANTARA ✦</h3>
+
+  <p>
+    Jelajahi Keindahan • Kenali Cerita • Jaga Alam Indonesia
+  </p>
+
+  <br>
+
+  <p>
+    Muhammad Teguh Herlambang |
+    Pendidikan Matematika |
+    Universitas Pasundan |
+    Mata Kuliah TIK
+  </p>
+
+  <p>© 2026 Langit Nusantara. Dibuat untuk keperluan pembelajaran.</p>
+</footer>
+
+<button id="atas" onclick="keAtas()">↑</button>
+
+<!-- JAVASCRIPT -->
+<script>
+function keAtas() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}
+
+// Efek navigasi aktif
+const menu = document.querySelectorAll("nav a");
+
+menu.forEach(link => {
+  link.addEventListener("click", function() {
+    menu.forEach(item => {
+      item.style.background = "transparent";
+      item.style.color = "white";
+    });
+
+    this.style.background = "white";
+    this.style.color = "#087bd8";
+  });
+});
+
+// Animasi saat bagian website terlihat
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = "1";
+      entry.target.style.transform = "translateY(0)";
+    }
+  });
+}, {
+  threshold: 0.1
+});
+
+document.querySelectorAll(
+  ".kartu, .kotak, .tip, .identitas-box"
+).forEach(element => {
+  element.style.opacity = "0";
+  element.style.transform = "translateY(20px)";
+  element.style.transition = "all .7s ease";
+  observer.observe(element);
+});
+</script>
+
+</body>
+</html>
